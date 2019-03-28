@@ -35,3 +35,6 @@ Creating an EKS cluster
 We use eksctl to create and EKS cluster using one line command.
 $ eksctl create cluster -f cluster.yml
 
+OR
+
+$ eksctl create cluster --name=exp-eks-cluster2 --nodes=2 --region=us-east-1 --vpc-public-subnets=subnet-00000,subnet-00000
