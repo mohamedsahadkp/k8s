@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment-name
+  labels:
+    app: mysql-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysql-pod
