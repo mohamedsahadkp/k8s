@@ -2,6 +2,8 @@ kind: StorageClass
 apiVersion: storage.k8s.io/v1beta1
 metadata:
   name: mysql-storegeclass
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "ebs"
 provisioner: kubernetes.io/aws-ebs
 parameters:
   zones: "us-east-1a,us-east-1b"
