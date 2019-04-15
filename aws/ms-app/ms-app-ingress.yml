@@ -1,22 +1,21 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: echoserver
-  namespace: echoserver
+  name: ms-ingress
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
 spec:
   rules:
-    - host: echoserver.example.com
+    - host: *.com
       http:
         paths:
-          - path: /api/user
+          - path: /api/users
             backend:
-              serviceName: echoserver
+              serviceName: users-service
               servicePort: 3001
-          - path: /api/account
+          - path: /api/accounts
             backend:
-              serviceName: echoserver
+              serviceName: accounts-service
               servicePort: 3002
