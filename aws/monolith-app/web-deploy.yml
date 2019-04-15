@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-web
+  labels:
+    customer: acg
+spec:
+  selector:
+    matchLabels:
+      app: web
+  replicas: 3
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - image: mohamedsahadkp/nodejs:1.0
+        name: web-ctr
+        ports:
+        - containerPort: 8080
