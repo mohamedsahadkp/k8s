@@ -1,13 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-web
-  labels:
-    customer: acg
+  name: accounts-deploy
 spec:
   selector:
     matchLabels:
-      app: web
+      app: accounts-api
   replicas: 3
   minReadySeconds: 10
   strategy:
@@ -18,10 +16,10 @@ spec:
   template:
     metadata:
       labels:
-        app: web
+        app: accounts-api
     spec:
       containers:
-      - image: mohamedsahadkp/nodejs:1.0
-        name: web-ctr
+      - image: mohamedsahadkp/nodejs:accounts-1.0
+        name: accounts-api-container
         ports:
-        - containerPort: 8080
+        - containerPort: 3002
