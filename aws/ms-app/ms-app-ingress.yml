@@ -12,7 +12,11 @@ spec:
     - host: echoserver.example.com
       http:
         paths:
-          - path: /
+          - path: /api/user
             backend:
               serviceName: echoserver
-              servicePort: 80
+              servicePort: 3001
+          - path: /api/account
+            backend:
+              serviceName: echoserver
+              servicePort: 3002
