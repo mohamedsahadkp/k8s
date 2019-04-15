@@ -3,7 +3,7 @@
 var express = require('express'),
 app = express();
 
-app.get('/api/account', function(req, res) {
+app.get('/api/accounts', function(req, res) {
   res.send({
     "status" : "OK",
     "module": "Account",

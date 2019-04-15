@@ -21,7 +21,7 @@ spec:
         app: web
     spec:
       containers:
-      - image: mohamedsahadkp/nodejs:1.0
+      - image: mohamedsahadkp/nodejs:ms1-1.0
         name: web-ctr
         ports:
-        - containerPort: 8080
+        - containerPort: 3001
