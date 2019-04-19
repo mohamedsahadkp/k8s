@@ -22,4 +22,4 @@ spec:
       - image: mohamedsahadkp/nodejs:users-1.0
         name: users-api-container
         ports:
-        - containerPort: 3001
+        - containerPort: 30001

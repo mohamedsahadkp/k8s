@@ -5,8 +5,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 3002
-      nodePort: 3002
+    - port: 30002
+      nodePort: 30002
   selector:
     app: accounts-api
      

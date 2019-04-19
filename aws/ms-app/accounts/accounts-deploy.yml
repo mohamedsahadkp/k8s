@@ -22,4 +22,4 @@ spec:
       - image: mohamedsahadkp/nodejs:accounts-1.0
         name: accounts-api-container
         ports:
-        - containerPort: 3002
+        - containerPort: 30002

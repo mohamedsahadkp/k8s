@@ -5,17 +5,21 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: "instance"
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
-spec:
-  rules:
-    - host: *.com
-      http:
+
+    alb.ingress.kubernetes.io/healthcheck-path: "/"
+    alb.ingress.kubernetes.io/success-codes: "200,404"
+  spec:
+    rules:
+      - http:
         paths:
-          - path: /api/users
-            backend:
-              serviceName: users-service
-              servicePort: 3001
-          - path: /api/accounts
-            backend:
-              serviceName: accounts-service
-              servicePort: 3002
+        - path: /api/users
+          backend:
+            serviceName: users-service
+            servicePort: 30001
+        - path: /api/accounts
+          backend:
+            serviceName: accounts-service
+            servicePort: 30002

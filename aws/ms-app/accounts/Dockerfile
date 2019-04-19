@@ -6,5 +6,5 @@ WORKDIR /usr/src/app
 RUN apk update && apk upgrade && \
  apk add --no-cache bash git openssh
 RUN npm install
-EXPOSE 3002
+EXPOSE 30002
 CMD node ./app.js
