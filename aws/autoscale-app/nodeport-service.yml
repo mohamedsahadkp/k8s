@@ -1,14 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-nodeport
-  labels:
-    app: web
+  name: autoscale-app-nodeport
 spec:
   type: NodePort
   ports:
     - port: 9090
       nodePort: 32000
   selector:
-    app: web
+    app: autoscale-app
      
