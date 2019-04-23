@@ -4,13 +4,14 @@ var express = require('express'),
 app = express();
 
 app.get('/api', function(req, res) {
+  let num;
   if(req.query.fibo != undefined) {
     let num = parseInt(req.query.fibo);
-    console.log("Result :" + fibo(num));
+    console.log("Result :" +  fibo(num));
   }
   res.send({
     "status" : "OK",
-    "message" : "Autoscale APIs are working 3" 
+    "message" : "Autoscale APIs are working 3",
   });
 });
 
