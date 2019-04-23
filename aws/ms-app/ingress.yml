@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "ingress"
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+  labels:
+    app: demoapp
+spec:
+  rules:
+  - host: myservice.pdxdiver.io
+    http:
+      paths:
+      - path: /api/users
+        backend:
+          serviceName: users-service
+          servicePort: 30001
+  - host: helloapp.pdxdiver.io
+    http:
+      paths:
+      - path: /api/accounts
+        backend:
+          serviceName: accounts-service
+          servicePort: 30002
