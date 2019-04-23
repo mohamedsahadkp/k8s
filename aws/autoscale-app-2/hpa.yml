@@ -39,7 +39,7 @@ spec:
         app: acg-stress
     spec:
       containers:
-      - image: 129800272058.dkr.ecr.us-east-1.amazonaws.com/nodejs:autoscale-2.0
+      - image: 129800272058.dkr.ecr.us-east-1.amazonaws.com/nodejs:autoscale-2.1
         name: stresser
         ports:
           - containerPort: 9595
