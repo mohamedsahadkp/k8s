@@ -6,7 +6,7 @@ app = express();
 app.get('/api', function(req, res) {
   let num;
   if(req.query.fibo != undefined) {
-    let num = parseInt(req.query.fibo);
+    num = parseInt(req.query.fibo);
     console.log("Result :" +  fibo(num));
   }
   res.send({
