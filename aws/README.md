@@ -38,3 +38,7 @@ $ eksctl create cluster -f cluster.yml
 OR
 
 $ eksctl create cluster --name=exp-eks-cluster3 --nodes=2 --region=us-east-1 --vpc-public-subnets=subnet-00000,subnet-00000 --node-type=t2.micro
+
+
+# AutoScaling
+https://aws.amazon.com/premiumsupport/knowledge-center/eks-metrics-server-pod-autoscaler/
