@@ -19,3 +19,11 @@ gcloud container clusters get-credentials [CLUSTER_NAME]
 
 (6) Delete cluster
 gcloud container clusters delete [CLUSTER_NAME]
+
+
+
+##Google Container Registry
+Create Docker
+
+sudo docker build -t [HOSTNAME]/[PROJECT-ID]/[IMAGE]:[TAG] .
+[HOSTNAME] = asia.gcr.io
