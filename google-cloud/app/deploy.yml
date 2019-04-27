@@ -19,7 +19,7 @@ spec:
         app: app
     spec:
       containers:
-      - image: mohamedsahadkp/nodejs:1.0
+      - image: gcr.io/orbital-science-238912/nodejs:v1.0
         name: app-container
         ports:
         - containerPort: 8080

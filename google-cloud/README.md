@@ -23,7 +23,10 @@ gcloud container clusters delete [CLUSTER_NAME]
 
 
 ##Google Container Registry
-Create Docker
+
+gcloud auth configure-docker
+
+gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://[HOSTNAME]
 
 sudo docker build -t [HOSTNAME]/[PROJECT-ID]/[IMAGE]:[TAG] .
 [HOSTNAME] = asia.gcr.io
