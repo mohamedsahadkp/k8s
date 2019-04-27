@@ -9,17 +9,15 @@ metadata:
     app: demoapp
 spec:
   rules:
-  - host: myservice.pdxdiver.io
-    http:
+  - http:
       paths:
-      - path: /api/users
+      - path: /api/users/*
         backend:
           serviceName: users-service
           servicePort: 30001
-  - host: helloapp.pdxdiver.io
-    http:
+  - http:
       paths:
-      - path: /api/accounts
+      - path: /api/accounts/*
         backend:
           serviceName: accounts-service
           servicePort: 30002
