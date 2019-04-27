@@ -16,3 +16,6 @@ gcloud container clusters create [CLUSTER_NAME]
 
 (5) Authenticate local machine to GKE API Server (Kubernetes Cluster)
 gcloud container clusters get-credentials [CLUSTER_NAME]
+
+(6) Delete cluster
+gcloud container clusters delete [CLUSTER_NAME]
