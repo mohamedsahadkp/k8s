@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-web-admin
+  namespace: dev
+  labels:
+    app: deploy-web-admin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pod-web-admin
+  template:
+    metadata:
+      labels:
+        app: pod-web-admin
+    spec:
+      containers:
+      - name: pod-web-admin-container
+        # Change the image address to your version
+        image: mmegger/one-time-secret:2022-06-20
+        ports:
+        - containerPort: 80
+        # Change the DB_PASSWORD and DB_HOST values to those for your Redis cluster
+        # This is a good opportunity to encrypt your credentials using the Sealed Secrets project
+        env:
+        - name: DB_PASSWORD
+          value: "<REDIS_PASSWORD>"
+        - name: DB_HOST
+          value: "<REDIS_HOST_URL>"
+        - name: DB_PORT
+          value: "25061"
+        - name: DB_SSL
+          value: "True"
+        resources:
+          requests:
+            cpu: 30m
+            memory: 64Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi
